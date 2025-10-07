@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <title>Block Blast - Mobile Game</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <div id="homeScreen" class="home-screen">
+            <h1 class="game-title">Block Blast</h1>
+            <button class="btn btn-primary btn-large" id="playBtn">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                    <polygon points="5 3 19 12 5 21 5 3"></polygon>
+                </svg>
+                Play Game
+            </button>
+            <div class="leaderboard">
+                <h2>Top 5 Scores</h2>
+                <div id="leaderboardList" class="leaderboard-list">
+                    <div class="leaderboard-empty">No scores yet. Play to set a record!</div>
+                </div>
+            </div>
+        </div>
+
+        <div id="gameScreen" class="game-screen" style="display: none;">
+            <div class="game-controls">
+                <button class="control-btn" id="backToHomeBtn">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+                        <polyline points="9 22 9 12 15 12 15 22"></polyline>
+                    </svg>
+                    <span>Home</span>
+                </button>
+                <button class="control-btn help-btn" id="helpBtn">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <circle cx="12" cy="12" r="10"></circle>
+                        <path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"></path>
+                        <line x1="12" y1="17" x2="12.01" y2="17"></line>
+                    </svg>
+                    <span id="helpStatus">Help</span>
+                </button>
+            </div>
+
+            <header>
+                <div class="header-content">
+                    <h1>Block Blast</h1>
+                    <div class="score-container">
+                        <div class="score-label">SCORE</div>
+                        <div class="score-value" id="score">0</div>
+                    </div>
+                </div>
+            </header>
+
+            <main>
+                <div class="game-board" id="gameBoard"></div>
+                
+                <div class="pieces-container" id="piecesContainer">
+                    <div class="piece-slot" id="piece0"></div>
+                    <div class="piece-slot" id="piece1"></div>
+                    <div class="piece-slot" id="piece2"></div>
+                </div>
+            </main>
+        </div>
+
+        <div class="modal" id="gameOverModal">
+            <div class="modal-content">
+                <h2>Game Over!</h2>
+                <p class="final-score">Score: <span id="finalScore">0</span></p>
+                <div class="modal-buttons">
+                    <button class="btn btn-ad" id="watchAdBtn">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                            <polygon points="5 3 19 12 5 21 5 3"></polygon>
+                        </svg>
+                        Watch Ad for Second Chance
+                    </button>
+                    <button class="btn btn-primary" id="restartBtn">Restart Game</button>
+                    <button class="btn btn-secondary" id="homeBtn">Back to Home</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="ad-banner" id="adBanner">
+            <div class="ad-placeholder">Advertisement</div>
+        </div>
+
+        <div id="dragPreview" class="drag-preview"></div>
+    </div>
+
+    <script src="game.js"></script>
+</body>
+</html>
